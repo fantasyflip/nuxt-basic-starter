@@ -1,6 +1,6 @@
 import { createI18n } from "vue-i18n";
 
-// import en from "../locales/en.json";
+import en from "../locales/en.json";
 import de from "../locales/de.json";
 
 export default defineNuxtPlugin(({ vueApp }) => {
@@ -10,6 +10,7 @@ export default defineNuxtPlugin(({ vueApp }) => {
     fallbackLocale: "en",
     locale: "de",
     messages: {
+      en,
       de,
     },
   });
