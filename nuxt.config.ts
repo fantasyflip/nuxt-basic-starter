@@ -2,5 +2,5 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   // NUXT-OG-IMAGE: .env -> NUXT_PUBLIC_SITE_URL
-  modules: ["@nuxtjs/tailwindcss", "nuxt-og-image"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-og-image", "@nuxtjs/color-mode"],
 });
