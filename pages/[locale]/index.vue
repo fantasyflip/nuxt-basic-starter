@@ -2,7 +2,7 @@
   MainIndex
   <br />
   <button
-    class="dark:bg-black dark:text-white bg-white text-black px-4 py-2 rounded"
+    class="rounded bg-white px-4 py-2 text-black dark:bg-black dark:text-white"
     @click="
       $colorMode.value === 'dark'
         ? ($colorMode.value = 'light')

@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const tailwindConfig = require("./tailwind.config.js");
+
 module.exports = {
   root: true,
   env: {
@@ -29,6 +32,12 @@ module.exports = {
         endOfLine: "auto",
         semi: true,
         singleQuote: false,
+      },
+    ],
+    "tailwindcss/no-custom-classname": [
+      1,
+      {
+        config: tailwindConfig,
       },
     ],
   },
