@@ -1,1 +1,1 @@
-<template>fallbackIndex</template>
+<template>fallbackIndex {{ $t("helloworld") }}</template>
