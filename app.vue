@@ -3,25 +3,35 @@
 </template>
 
 <script lang="ts" setup>
-import { useI18n } from "vue-i18n";
+const head = useLocaleHead({
+  addDirAttribute: true,
+  identifierAttribute: "id",
+  addSeoAttributes: true,
+});
 
+const metaItems = computed(() => {
+  let staticItems = [{ name: "description", content: "My amazing site." }];
+  //merge with head.meta
+  return [...staticItems, ...head.value.meta];
+});
+
+const linkItems = computed(() => {
+  let staticItems = [
+    {
+      rel: "icon",
+      type: "image/x-icon",
+      href: "/favicon.ico",
+    },
+  ];
+  //merge with head.link
+  return [...staticItems, ...head.value.link];
+});
 useHead({
   titleTemplate: "%s | App-Name",
-  meta: [{ name: "description", content: "My amazing site." }],
+  meta: metaItems.value,
+  link: linkItems.value,
 });
 defineOgImageComponent("NuxtSeo", {
   colorMode: "dark",
 });
-
-const route = useRoute();
-const { locale } = useI18n();
-watch(
-  () => route.params.locale,
-  (newLocale, oldLocale) => {
-    if (newLocale !== oldLocale) {
-      locale.value = newLocale as string;
-    }
-  },
-  { immediate: true }
-);
 </script>
