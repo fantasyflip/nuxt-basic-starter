@@ -30,6 +30,11 @@ useHead({
   titleTemplate: "%s | App-Name",
   meta: metaItems.value,
   link: linkItems.value,
+  htmlAttrs: {
+    lang: head.value.htmlAttrs?.lang,
+    dir: head.value.htmlAttrs?.dir,
+    style: "scroll-behavior: smooth;",
+  },
 });
 defineOgImageComponent("NuxtSeo", {
   colorMode: "dark",
