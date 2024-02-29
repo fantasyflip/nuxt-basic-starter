@@ -10,13 +10,13 @@ const head = useLocaleHead({
 });
 
 const metaItems = computed(() => {
-  let staticItems = [{ name: "description", content: "My amazing site." }];
+  const staticItems = [{ name: "description", content: "My amazing site." }];
   //merge with head.meta
-  return [...staticItems, ...head.value.meta];
+  return [...staticItems, ...(head.value.meta ?? [])];
 });
 
 const linkItems = computed(() => {
-  let staticItems = [
+  const staticItems = [
     {
       rel: "icon",
       type: "image/x-icon",
@@ -24,7 +24,7 @@ const linkItems = computed(() => {
     },
   ];
   //merge with head.link
-  return [...staticItems, ...head.value.link];
+  return [...staticItems, ...(head.value.link ?? [])];
 });
 useHead({
   titleTemplate: "%s | App-Name",
