@@ -10,9 +10,9 @@
     "reinstall": "rm -rf node_modules && rm -rf .nuxt && rm -f package-lock.json && rm -f pnpm-lock.yaml && pnpm install"
   },
   "devDependencies": {
+    "@nuxt/eslint-config": "^0.2.0",
     "@nuxtjs/color-mode": "^3.3.2",
     "@nuxtjs/i18n": "^8.1.1",
-    "@nuxt/eslint-config": "^0.2.0",
     "@nuxtjs/tailwindcss": "^6.11.4",
     "@vue/eslint-config-standard": "^8.0.1",
     "eslint": "^8.56.0",
@@ -23,5 +23,9 @@
     "nuxt-og-image": "^3.0.0-rc.30",
     "vue": "^3.4.5",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.9.0",
+    "@vueuse/nuxt": "^10.9.0"
   }
 }
