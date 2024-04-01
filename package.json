@@ -6,20 +6,21 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "reinstall": "rm -rf node_modules && rm -rf .nuxt && rm -f package-lock.json && rm -f pnpm-lock.yaml && pnpm install"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.3.2",
-    "@nuxtjs/i18n": "^8.0.0",
+    "@nuxtjs/i18n": "^8.1.1",
     "@nuxt/eslint-config": "^0.2.0",
-    "@nuxtjs/tailwindcss": "^6.10.3",
+    "@nuxtjs/tailwindcss": "^6.11.4",
     "@vue/eslint-config-standard": "^8.0.1",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.2",
     "eslint-plugin-tailwindcss": "^3.13.1",
-    "nuxt": "^3.9.0",
-    "nuxt-og-image": "^3.0.0-rc.23",
+    "nuxt": "^3.11.1",
+    "nuxt-og-image": "^3.0.0-rc.30",
     "vue": "^3.4.5",
     "vue-router": "^4.2.5"
   }
