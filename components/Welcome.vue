@@ -28,7 +28,7 @@
         </a>
       </div>
       <h1 class="pb-16 pt-6 text-center text-5xl font-bold">
-        Welcome to Nuxt-Template!
+        Welcome to Nuxt-Basic Starter!
       </h1>
       <div
         ref="GetStartedCard"
