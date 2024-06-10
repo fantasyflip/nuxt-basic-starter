@@ -1,0 +1,20 @@
+name: Dockerize and Push to Infra-Repo
+
+on:
+  workflow_dispatch:
+#   push:
+#     branches:
+#       - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Dockerize and Push to Infra-Repo Action
+        uses: fantasyflip/k8s-build-transfer@v1
+        with:
+          node-version: 18
+          infra-repo: "your-org/infra-repo"
+          gh-token: ${{ secrets.GITHUB_TOKEN }}
+          namespace: "nuxt-basic-starter"
+          app-name: "nuxt-basic-starter"
