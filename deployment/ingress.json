@@ -1,0 +1,32 @@
+{
+  "apiVersion": "networking.k8s.io/v1",
+  "kind": "Ingress",
+  "metadata": {
+    "name": "ingress-nginx-controller",
+    "namespace": "nuxt-basic-starter"
+  },
+  "spec": {
+    "ingressClassName": "nginx",
+    "rules": [
+      {
+        "host": "nuxt-basic.fantasyflip.de",
+        "http": {
+          "paths": [
+            {
+              "path": "/",
+              "pathType": "Prefix",
+              "backend": {
+                "service": {
+                  "name": "nuxt-basic-starter-service",
+                  "port": {
+                    "number": 3000
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
