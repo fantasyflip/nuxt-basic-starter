@@ -22,3 +22,5 @@ logs
 .env
 .env.*
 !.env.example
+# unsealed k8s secrets in deployment folder
+unsealed_env.*

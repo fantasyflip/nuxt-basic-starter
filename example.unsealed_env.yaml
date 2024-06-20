@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: applicationname-env-secrets
+  namespace: namespace
+type: Opaque
+data:
+  # DO NOT PUSH TO REPO!!!
+  # Base64 encoded values!
+  # run pnpm seal / pnpm seal-win to encrypt values before pushing to repo
+  NUXT_PUBLIC_I18N_BASE_URL: d2h5IGFyZSB5b3UgZW5jb2RpbmcgdGhpcyA6RA==

@@ -7,6 +7,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "seal": "kubeseal --format=yaml < unsealed_env.yaml > ./deployment/pod/env.yaml",
     "reinstall": "rm -rf node_modules && rm -rf .nuxt && rm -f package-lock.json && rm -f pnpm-lock.yaml && pnpm install"
   },
   "devDependencies": {
