@@ -7,7 +7,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "seal": "kubeseal --format=yaml < unsealed_env.yaml > ./deployment/pod/env.yaml",
+    "seal": "node ./scripts/k8s-sealcreate-secrets.js",
+    "k8s-init": "node ./scripts/k8s-init.js",
     "reinstall": "rm -rf node_modules && rm -rf .nuxt && rm -f package-lock.json && rm -f pnpm-lock.yaml && pnpm install"
   },
   "devDependencies": {
@@ -16,6 +17,7 @@
     "@nuxtjs/i18n": "^8.3.1",
     "@nuxtjs/tailwindcss": "^6.12.0",
     "@vue/eslint-config-standard": "^8.0.1",
+    "dotenv": "^16.4.5",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
@@ -23,7 +25,8 @@
     "nuxt": "^3.11.2",
     "nuxt-og-image": "3.0.0-rc.53",
     "vue": "^3.4.27",
-    "vue-router": "^4.3.2"
+    "vue-router": "^4.3.2",
+    "yaml": "^2.4.5"
   },
   "dependencies": {
     "@vueuse/core": "^10.9.0",
