@@ -14,7 +14,7 @@ COPY source/package.json source/pnpm-lock.yaml ./
 RUN pnpm install --ignore-scripts
 
 # Copy the rest of the application code
-COPY source/. .
+COPY source/ ./
 
 # Build the application
 RUN pnpm build
@@ -27,16 +27,6 @@ WORKDIR /app
 
 # Copy the built application from the build stage
 COPY --from=build-stage /app/.output ./
-
-# Install pnpm in the production stage
-# RUN npm install -g pnpm
-
-# # Install only production dependencies
-# COPY package.json pnpm-lock.yaml ./
-# RUN pnpm install --prod
-
-# Expose the port the app runs on
-# EXPOSE 3000
 
 # Start the application
 CMD ["node", "server/index.mjs"]

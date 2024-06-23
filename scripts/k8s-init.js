@@ -17,14 +17,14 @@ function getK8sConfig() {
 }
 
 // Function to update package.json with k8s config
-function updateK8sConfig(namespace, serviceName, appName, infraRepo) {
+function updateK8sConfig(namespace, serviceName, appName, infraRepo, ghEmail) {
   const packageJsonPath = path.join(__dirname, "..", "package.json");
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
-  packageJson.k8s = { namespace, serviceName, appName, infraRepo };
+  packageJson.k8s = { namespace, serviceName, appName, infraRepo, ghEmail };
   fs.writeFileSync(
     packageJsonPath,
     JSON.stringify(packageJson, null, 2),
-    "utf8",
+    "utf8"
   );
 }
 
@@ -38,14 +38,14 @@ function prompt(question) {
     rl.question(question, (ans) => {
       rl.close();
       resolve(ans);
-    }),
+    })
   );
 }
 
 // Main function to generate files
 async function main() {
   let k8sConfig = getK8sConfig();
-  let { namespace, serviceName, appName, infraRepo } = k8sConfig;
+  let { namespace, serviceName, appName, infraRepo, ghEmail } = k8sConfig;
 
   if (!namespace) {
     namespace = await prompt("Enter Kubernetes namespace: ");
@@ -59,9 +59,12 @@ async function main() {
   if (!infraRepo) {
     infraRepo = await prompt("Enter Infra Repo: ");
   }
+  if (!ghEmail) {
+    ghEmail = await prompt("Enter GitHub email: ");
+  }
 
   // Update package.json with new values
-  updateK8sConfig(namespace, serviceName, appName, infraRepo);
+  updateK8sConfig(namespace, serviceName, appName, infraRepo, ghEmail);
 
   // Ingress JSON content
   const ingressJsonContent = JSON.stringify(
@@ -98,7 +101,7 @@ async function main() {
       },
     },
     null,
-    2,
+    2
   );
 
   // Deployment JSON content
@@ -156,7 +159,7 @@ async function main() {
       },
     },
     null,
-    2,
+    2
   );
 
   // Service YAML content
@@ -188,11 +191,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Use Dockerize and Push to Infra-Repo Action
-        uses: fantasyflip/k8s-build-transfer@v1.1.0
+        uses: fantasyflip/k8s-build-transfer@v1.2.0
         with:
           node-version: 18
           infra-repo: "${infraRepo}"
           gh-token: \${{ secrets.GH_TOKEN }}
+          gh-email: "${ghEmail}"
           namespace: "${namespace}"
           app-name: "${appName}"
 `;
@@ -210,13 +214,13 @@ jobs:
   // Write files
   fs.writeFileSync(
     path.join(deploymentDir, "ingress.json"),
-    ingressJsonContent,
+    ingressJsonContent
   );
   fs.writeFileSync(path.join(podDir, "deployment.json"), deploymentJsonContent);
   fs.writeFileSync(path.join(podDir, "service.yaml"), serviceYamlContent);
   fs.writeFileSync(
     path.join(githubDir, "dockerize-and-push.yml"),
-    githubActionContent,
+    githubActionContent
   );
 
   console.log("Files created successfully");
