@@ -14,14 +14,14 @@ export default defineNuxtConfig({
           {
             code: "en",
             name: "English",
-            iso: "en-US",
+            language: "en-US",
             file: "en-US.json",
             isCatchallLocale: true,
           },
           {
             code: "de",
             name: "Deutsch",
-            iso: "de-DE",
+            language: "de-DE",
             file: "de-DE.json",
           },
         ],
