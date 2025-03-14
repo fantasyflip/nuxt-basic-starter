@@ -5,6 +5,7 @@ import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended"
 import tailwindPlugin from "eslint-plugin-tailwindcss";
 
 import withNuxt from "./.nuxt/eslint.config.mjs";
+
 const tailwindConfig = (await import("./tailwind.config.js")).default;
 
 export default withNuxt({

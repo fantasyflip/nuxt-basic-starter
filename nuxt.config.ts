@@ -1,7 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-
   // NUXT-OG-IMAGE: .env -> NUXT_PUBLIC_SITE_URL
   // NUXT-i18n: .env -> NUXT_PUBLIC_I18N_BASE_URL
   modules: [
@@ -43,15 +41,9 @@ export default defineNuxtConfig({
       },
     ],
     "@vueuse/nuxt",
-    [
-      "@nuxt/eslint",
-      {
-        config: {
-          stylistic: true,
-        },
-      },
-    ],
+    "@nuxt/eslint",
   ],
+  devtools: { enabled: true },
 
   runtimeConfig: {
     public: {

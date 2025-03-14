@@ -1,9 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 const { exec } = require("child_process");
+const readline = require("readline");
 const dotenv = require("dotenv");
 const yaml = require("yaml");
-const readline = require("readline");
 
 // Create readline interface
 const rl = readline.createInterface({

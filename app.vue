@@ -11,7 +11,7 @@ const head = useLocaleHead({
 
 const metaItems = computed(() => {
   const staticItems = [{ name: "description", content: "My amazing site." }];
-  //merge with head.meta
+  // merge with head.meta
   return [...staticItems, ...(head.value.meta ?? [])];
 });
 
@@ -23,7 +23,7 @@ const linkItems = computed(() => {
       href: "/favicon.ico",
     },
   ];
-  //merge with head.link
+  // merge with head.link
   return [...staticItems, ...(head.value.link ?? [])];
 });
 useHead({
