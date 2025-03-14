@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   // NUXT-OG-IMAGE: .env -> NUXT_PUBLIC_SITE_URL
   // NUXT-i18n: .env -> NUXT_PUBLIC_I18N_BASE_URL
   modules: [
@@ -43,6 +44,7 @@ export default defineNuxtConfig({
     ],
     "@vueuse/nuxt",
   ],
+
   runtimeConfig: {
     public: {
       i18n: {
@@ -50,4 +52,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  compatibilityDate: "2025-03-14",
 });
