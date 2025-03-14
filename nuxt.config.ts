@@ -43,6 +43,14 @@ export default defineNuxtConfig({
       },
     ],
     "@vueuse/nuxt",
+    [
+      "@nuxt/eslint",
+      {
+        config: {
+          stylistic: true,
+        },
+      },
+    ],
   ],
 
   runtimeConfig: {

@@ -31,9 +31,10 @@
         Welcome to Nuxt-Basic Starter!
       </h1>
       <div
+        id="background-gradient"
         ref="GetStartedCard"
         :style="getStartedWrapperStyle"
-        class="background-gradient group relative isolate flex size-full flex-1 flex-col rounded-md before:absolute before:-inset-px before:z-[-1] before:hidden before:size-[calc(100%+2px)] before:rounded-[8px] after:absolute after:left-1/2 after:top-1/2 after:z-[-1] after:size-[calc(100%-1px)] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-md before:lg:block"
+        class="group relative isolate flex size-full flex-1 flex-col rounded-md before:absolute before:-inset-px before:z-[-1] before:hidden before:size-[calc(100%+2px)] before:rounded-[8px] after:absolute after:left-1/2 after:top-1/2 after:z-[-1] after:size-[calc(100%-1px)] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-md before:lg:block"
       >
         <!-- test {{ elementX }} -->
         <div
@@ -81,9 +82,10 @@
       <div class="flex gap-5 pt-5">
         <div class="flex w-2/3 flex-col gap-5">
           <div
+            id="background-gradient2"
             ref="I18nCard"
             :style="I18nWrapperStyle"
-            class="background-gradient2 group relative isolate flex size-full flex-1 flex-col rounded-md before:absolute before:-inset-px before:z-[-1] before:hidden before:size-[calc(100%+2px)] before:rounded-[8px] after:absolute after:left-1/2 after:top-1/2 after:z-[-1] after:size-[calc(100%-1px)] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-md before:lg:block"
+            class="group relative isolate flex size-full flex-1 flex-col rounded-md before:absolute before:-inset-px before:z-[-1] before:hidden before:size-[calc(100%+2px)] before:rounded-[8px] after:absolute after:left-1/2 after:top-1/2 after:z-[-1] after:size-[calc(100%-1px)] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-md before:lg:block"
           >
             <div
               class="flex rounded-lg bg-gradient-to-br from-white to-green-200 p-6 dark:from-zinc-900 dark:to-zinc-950"
@@ -147,9 +149,10 @@
             </div>
           </div>
           <div
+            id="background-gradient3"
             ref="ColorModeCard"
             :style="ColorModeWrapperStyle"
-            class="background-gradient3 group relative isolate flex size-full flex-1 flex-col rounded-md before:absolute before:-inset-px before:z-[-1] before:hidden before:size-[calc(100%+2px)] before:rounded-[8px] after:absolute after:left-1/2 after:top-1/2 after:z-[-1] after:size-[calc(100%-1px)] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-md before:lg:block"
+            class="group relative isolate flex size-full flex-1 flex-col rounded-md before:absolute before:-inset-px before:z-[-1] before:hidden before:size-[calc(100%+2px)] before:rounded-[8px] after:absolute after:left-1/2 after:top-1/2 after:z-[-1] after:size-[calc(100%-1px)] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-md before:lg:block"
           >
             <div
               class="flex rounded-lg bg-gradient-to-br from-white to-green-200 p-6 dark:from-zinc-900 dark:to-zinc-950"
@@ -206,9 +209,10 @@
           </div>
         </div>
         <div
+          id="background-gradient4"
           ref="DevExperienceCard"
           :style="DevExperienceWrapperStyle"
-          class="background-gradient4 group relative isolate flex size-full w-1/3 flex-1 flex-col rounded-md before:absolute before:-inset-px before:z-[-1] before:hidden before:size-[calc(100%+2px)] before:rounded-[8px] after:absolute after:left-1/2 after:top-1/2 after:z-[-1] after:size-[calc(100%-1px)] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-md before:lg:block"
+          class="group relative isolate flex size-full w-1/3 flex-1 flex-col rounded-md before:absolute before:-inset-px before:z-[-1] before:hidden before:size-[calc(100%+2px)] before:rounded-[8px] after:absolute after:left-1/2 after:top-1/2 after:z-[-1] after:size-[calc(100%-1px)] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-md before:lg:block"
         >
           <div
             class="flex size-full flex-col rounded-lg bg-gradient-to-br from-white to-green-200 p-6 dark:from-zinc-900 dark:to-zinc-950"
@@ -341,7 +345,7 @@ const DevExperienceWrapperStyle = computed(() => {
 </script>
 
 <style scoped>
-.background-gradient::before {
+#background-gradient::before {
   background: radial-gradient(
     150px circle at var(--x) var(--y),
     #00dc82 0%,
@@ -349,7 +353,7 @@ const DevExperienceWrapperStyle = computed(() => {
   );
   will-change: background;
 }
-.background-gradient2::before {
+#background-gradient2::before {
   background: radial-gradient(
     150px circle at var(--translateX) var(--translateY),
     #00dc82 0%,
@@ -357,7 +361,7 @@ const DevExperienceWrapperStyle = computed(() => {
   );
   will-change: background;
 }
-.background-gradient3::before {
+#background-gradient3::before {
   background: radial-gradient(
     150px circle at var(--colorX) var(--colorY),
     #00dc82 0%,
@@ -365,7 +369,7 @@ const DevExperienceWrapperStyle = computed(() => {
   );
   will-change: background;
 }
-.background-gradient4::before {
+#background-gradient4::before {
   background: radial-gradient(
     150px circle at var(--devX) var(--devY),
     #00dc82 0%,

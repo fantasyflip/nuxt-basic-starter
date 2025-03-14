@@ -24,7 +24,7 @@ function updateK8sConfig(namespace, serviceName, appName, infraRepo, ghEmail) {
   fs.writeFileSync(
     packageJsonPath,
     JSON.stringify(packageJson, null, 2),
-    "utf8"
+    "utf8",
   );
 }
 
@@ -38,7 +38,7 @@ function prompt(question) {
     rl.question(question, (ans) => {
       rl.close();
       resolve(ans);
-    })
+    }),
   );
 }
 
@@ -101,7 +101,7 @@ async function main() {
       },
     },
     null,
-    2
+    2,
   );
 
   // Deployment JSON content
@@ -159,7 +159,7 @@ async function main() {
       },
     },
     null,
-    2
+    2,
   );
 
   // Service YAML content
@@ -214,13 +214,13 @@ jobs:
   // Write files
   fs.writeFileSync(
     path.join(deploymentDir, "ingress.json"),
-    ingressJsonContent
+    ingressJsonContent,
   );
   fs.writeFileSync(path.join(podDir, "deployment.json"), deploymentJsonContent);
   fs.writeFileSync(path.join(podDir, "service.yaml"), serviceYamlContent);
   fs.writeFileSync(
     path.join(githubDir, "dockerize-and-push.yml"),
-    githubActionContent
+    githubActionContent,
   );
 
   console.log("Files created successfully");
