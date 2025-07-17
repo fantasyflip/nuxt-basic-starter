@@ -4,9 +4,8 @@
 
 <script lang="ts" setup>
 const head = useLocaleHead({
-  addDirAttribute: true,
-  identifierAttribute: "id",
-  addSeoAttributes: true,
+  dir: true,
+  seo: true,
 });
 
 const metaItems = computed(() => {
@@ -32,7 +31,7 @@ useHead({
   link: linkItems.value,
   htmlAttrs: {
     lang: head.value.htmlAttrs?.lang,
-    dir: head.value.htmlAttrs?.dir,
+    dir: head.value.htmlAttrs?.dir as "ltr" | "rtl" | "auto" | undefined,
     style: "scroll-behavior: smooth;",
   },
 });

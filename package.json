@@ -11,7 +11,8 @@
     "k8s-init": "node ./scripts/k8s-init.js",
     "reinstall": "rm -rf node_modules && rm -rf .nuxt && rm -f package-lock.json && rm -f pnpm-lock.yaml && pnpm install",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "typecheck": "nuxt prepare && vue-tsc -b --noEmit"
   },
   "devDependencies": {
     "@nuxt/eslint": "1.5.2",
@@ -23,11 +24,12 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-tailwindcss": "^3.18.2",
-    "nuxt": "^3.16.0",
+    "nuxt": "^4.0.0",
     "nuxt-og-image": "5.1.9",
     "typescript": "^5.8.3",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1",
+    "vue-tsc": "^3.0.2",
     "yaml": "^2.8.0"
   },
   "dependencies": {

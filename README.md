@@ -1,6 +1,6 @@
-# Nuxt 3 Basic Starter
+# Nuxt 4 Basic Starter
 
-This repository includes a basic starter for Nuxt 3 with Tailwind CSS, i18n, linting, and Open Graph.
+This repository includes a basic starter for Nuxt 4 with Tailwind CSS, i18n, linting, and Open Graph.
 
 [Feature Overview](https://nuxt-basic.fantasyflip.de)
 
@@ -145,7 +145,7 @@ The script will add environment variables to `deployment.json` under `spec.templ
 - The script will delete the unsealed secret YAML file after sealing it.
 - The namespace and secret name will be stored in `package.json` for future use.
 
-## Nuxt 3 Usage Information
+## Nuxt 4 Usage Information
 
 Refer to the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) for more information.
 

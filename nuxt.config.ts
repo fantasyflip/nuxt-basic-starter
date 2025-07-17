@@ -9,7 +9,13 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxt/eslint",
   ],
-
+  colorMode: {
+    preference: "system", // default value of $colorMode.preference
+    fallback: "dark", // fallback value if not system preference found
+    classSuffix: "",
+    classPrefix: "",
+    storageKey: "theme",
+  },
   i18n: {
     strategy: "prefix_except_default",
     defaultLocale: "de",
@@ -41,6 +47,5 @@ export default defineNuxtConfig({
       },
     },
   },
-
   compatibilityDate: "2025-03-14",
 });
