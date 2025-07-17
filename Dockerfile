@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM node:18-alpine as build-stage
+FROM node:22-alpine as build-stage
 
 # Install pnpm
 RUN npm install -g pnpm
@@ -11,16 +11,16 @@ WORKDIR /app
 COPY source/package.json source/pnpm-lock.yaml ./
 
 # Install dependencies
-RUN pnpm install --ignore-scripts
+RUN pnpm install --frozen-lockfile --ignore-scripts
 
 # Copy the rest of the application code
-COPY source/ ./
+COPY source/. .
 
 # Build the application
 RUN pnpm build
 
 # Stage 2: Serve the application
-FROM node:18-alpine as production-stage
+FROM node:22-alpine as production-stage
 
 # Set the working directory
 WORKDIR /app
