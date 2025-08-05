@@ -1,8 +1,8 @@
 import { defineNuxtConfig } from "nuxt/config";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   modules: [
-    "@nuxtjs/tailwindcss",
     "@nuxtjs/i18n",
     "nuxt-og-image",
     "@nuxtjs/color-mode",
@@ -36,6 +36,10 @@ export default defineNuxtConfig({
     ],
     langDir: "locales",
     vueI18n: "./i18n.config.ts",
+  },
+  css: ['~/assets/css/main.css'],
+  vite: {
+    plugins: [tailwindcss()],
   },
 
   devtools: { enabled: true },
