@@ -2,16 +2,12 @@ import eslintConfigPrettier from "eslint-config-prettier";
 import prettierPlugin from "eslint-plugin-prettier";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 
-import tailwindPlugin from "eslint-plugin-tailwindcss";
-
 import withNuxt from "./.nuxt/eslint.config.mjs";
 
-const tailwindConfig = (await import("./tailwind.config.js")).default;
 
 export default withNuxt({
   plugins: {
     prettier: prettierPlugin,
-    tailwindcss: tailwindPlugin,
   },
   rules: {
     // ...prettierPlugin.configs.recommended.rules,
@@ -29,13 +25,6 @@ export default withNuxt({
         endOfLine: "auto",
         semi: true,
         singleQuote: false,
-      },
-    ],
-
-    "tailwindcss/no-custom-classname": [
-      1,
-      {
-        config: tailwindConfig,
       },
     ],
   },

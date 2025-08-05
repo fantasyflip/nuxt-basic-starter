@@ -22,7 +22,6 @@
     "eslint": "^9.31.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.5.1",
-    "eslint-plugin-tailwindcss": "^3.18.2",
     "nuxt": "^4.0.2",
     "nuxt-og-image": "5.1.9",
     "typescript": "^5.8.3",
