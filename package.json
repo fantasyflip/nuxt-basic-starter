@@ -15,25 +15,26 @@
     "typecheck": "nuxt prepare && vue-tsc -b --noEmit"
   },
   "devDependencies": {
-    "@nuxt/eslint": "1.5.2",
+    "@nuxt/eslint": "1.11.0",
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/i18n": "^10.0.0",
     "dotenv": "^17.2.0",
-    "eslint": "^9.31.0",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-prettier": "^5.5.1",
-    "nuxt": "^4.0.2",
-    "nuxt-og-image": "5.1.9",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "nuxt": "^4.2.1",
+    "nuxt-og-image": "5.1.12",
     "typescript": "^5.8.3",
-    "vue": "^3.5.17",
-    "vue-router": "^4.5.1",
-    "vue-tsc": "^3.0.2",
+    "vue": "^3.5.25",
+    "vue-router": "^4.6.3",
+    "vue-tsc": "^3.1.5",
     "yaml": "^2.8.0"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.11",
-    "@vueuse/core": "^13.5.0",
-    "@vueuse/nuxt": "^13.5.0",
-    "tailwindcss": "^4.1.11"
-  }
+    "@tailwindcss/vite": "^4.1.17",
+    "@vueuse/core": "^14.1.0",
+    "@vueuse/nuxt": "^14.1.0",
+    "tailwindcss": "^4.1.17"
+  },
+  "packageManager": "pnpm@8.15.5+sha1.a58c038faac410c947dbdb93eb30994037d0fce2"
 }

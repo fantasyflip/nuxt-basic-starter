@@ -37,7 +37,7 @@ export default defineNuxtConfig({
     langDir: "locales",
     vueI18n: "./i18n.config.ts",
   },
-  css: ['~/assets/css/main.css'],
+  css: ["~/assets/css/main.css"],
   vite: {
     plugins: [tailwindcss()],
   },
