@@ -17,10 +17,24 @@ function getK8sConfig() {
 }
 
 // Function to update package.json with k8s config
-function updateK8sConfig(namespace, serviceName, appName, infraRepo, ghEmail) {
+function updateK8sConfig(
+  namespace,
+  serviceName,
+  appName,
+  infraRepo,
+  ghEmail,
+  ingressUrl,
+) {
   const packageJsonPath = path.join(__dirname, "..", "package.json");
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
-  packageJson.k8s = { namespace, serviceName, appName, infraRepo, ghEmail };
+  packageJson.k8s = {
+    namespace,
+    serviceName,
+    appName,
+    infraRepo,
+    ghEmail,
+    ingressUrl,
+  };
   fs.writeFileSync(
     packageJsonPath,
     JSON.stringify(packageJson, null, 2),
@@ -45,7 +59,8 @@ function prompt(question) {
 // Main function to generate files
 async function main() {
   let k8sConfig = getK8sConfig();
-  let { namespace, serviceName, appName, infraRepo, ghEmail } = k8sConfig;
+  let { namespace, serviceName, appName, infraRepo, ghEmail, ingressUrl } =
+    k8sConfig;
 
   if (!namespace) {
     namespace = await prompt("Enter Kubernetes namespace: ");
@@ -62,9 +77,20 @@ async function main() {
   if (!ghEmail) {
     ghEmail = await prompt("Enter GitHub email: ");
   }
+  if (!ingressUrl) {
+    ingressUrl = await prompt("Enter Ingress URL (host): ");
+  }
+  ingressUrl = ingressUrl.replace(/^https?:\/\//, "").replace(/\/.*$/, "");
 
   // Update package.json with new values
-  updateK8sConfig(namespace, serviceName, appName, infraRepo, ghEmail);
+  updateK8sConfig(
+    namespace,
+    serviceName,
+    appName,
+    infraRepo,
+    ghEmail,
+    ingressUrl,
+  );
 
   // Ingress JSON content
   const ingressJsonContent = JSON.stringify(
@@ -79,7 +105,7 @@ async function main() {
         ingressClassName: "nginx",
         rules: [
           {
-            host: "nuxt-basic.fantasyflip.de",
+            host: ingressUrl,
             http: {
               paths: [
                 {
